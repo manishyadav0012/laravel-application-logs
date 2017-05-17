@@ -33,6 +33,12 @@ DB_USERNAME=USERNAME
 DB_PASSWORD=SECRET
 ```
 
+Change your `mininum-stability` by adding these lines before `require:{...}` block in `composer.json` file
+```
+"minimum-stability" : "dev",
+"prefer-stable" : true,
+```
+
 Get the repository in your application using:
 
 ```
