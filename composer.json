@@ -15,8 +15,6 @@
         "laravel/framework": "5.4.*"
     },
 	"autoload": {
-        "psr-4": {
-			 "Manishyadav\\LaravelApplicationLogs\\": "manishyadav/laravel-application-logs/src"
-        }
+        "psr-4": {"Manishyadav\\LaravelApplicationLogs\\": "src"}
     }
 }
