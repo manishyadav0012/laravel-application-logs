@@ -1,0 +1,17 @@
+{
+    "name": "manishyadav/laravel-application-logs",
+    "description": "A Laravel logging application to store logs in mysql database",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manish Yadav",
+            "email": "manishyadav0012@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	 "php": ">=5.6.4",
+        "laravel/framework": "5.4.*",
+    }
+}
