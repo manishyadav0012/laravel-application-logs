@@ -70,7 +70,6 @@ Now, all the logs will be stored in the logs table in your database
 
 * [**Manish Yadav**](https://github.com/manishyadav0012)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
