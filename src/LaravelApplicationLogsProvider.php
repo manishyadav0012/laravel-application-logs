@@ -15,9 +15,19 @@ class LaravelApplicationLogsProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
-
-        $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $laravel = app();
+		$version = $laravel::VERSION;
+		
+		if($version >= '5.4.*'){
+			Schema::defaultStringLength(191);
+			
+		}else if($version >= '5.3.*'){
+			$this->loadMigrationsFrom(__DIR__.'/migrations');
+		}else{
+			 $this->publishes([
+				__DIR__.'/migrations/' => database_path('migrations')
+			], 'migrations');
+		}
     }
 
     /**
@@ -30,6 +40,5 @@ class LaravelApplicationLogsProvider extends ServiceProvider
         $this->app->configureMonologUsing(function (\Monolog\Logger $monolog) {
             return (new ConfigureMonolog())->getLogger($monolog);
         });
-
     }
 }
