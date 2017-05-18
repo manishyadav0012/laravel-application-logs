@@ -1,4 +1,4 @@
-# Laravel Application Logs (Laravel 5.4 Only)
+# Laravel Application Logs (Laravel v5.1.* - v5.4.*)
 [![PyPI](https://img.shields.io/badge/status-development-red.svg)]() [![PyPI](https://img.shields.io/badge/laravel-v5.4-green.svg)]()
 
 A laravel module which enables the application to save the logs in the database table instead of files. Logs gets automatically generated & saved into the database 
@@ -15,7 +15,6 @@ What things you need to install the software
 ```
 composer
 ```
-
 
 ### Installing
 
@@ -45,20 +44,34 @@ Get the repository in your application using:
 composer require manishyadav/laravel-application-logs
 ```
 
-
 Add the `LaravelApplicationLogsProvider` in your `config/app.php` providers array
 
 ```
 Manishyadav\LaravelApplicationLogs\LaravelApplicationLogsProvider::class,
 ```
 
-Run database migrations
+### For Laravel version below 5.3
+Publish the vendor files:
+```
+php artisan vendor:publish
+```
+
+Add the following code in `bootstrap/app.php` file before `return $app;` line
+```
+$app->configureMonologUsing(function (\Monolog\Logger $monolog) {
+	return (new Manishyadav\LaravelApplicationLogs\ConfigureMonolog())->getLogger($monolog);
+});
+```
+
+### For all Laravel 5 versions 
+
+Run the database migrations
 
 ```
 php artisan migrate
 ```
 
-Now, all the logs will be stored in the logs table in your database
+Now, all the logs will be stored in the `logs` table in your database
 
 
 ## Built With
