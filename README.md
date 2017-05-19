@@ -1,5 +1,5 @@
 # Laravel Application Logs (Laravel v5.1.* - v5.4.*)
-[![PyPI](https://img.shields.io/badge/status-development-red.svg)]() [![PyPI](https://img.shields.io/badge/laravel-v5.4-green.svg)]()
+[![PyPI](https://img.shields.io/badge/status-development-red.svg)]() [![PyPI](https://img.shields.io/badge/laravel-(v5.1_v5.4)-green.svg)]()
 
 A laravel module which enables the application to save the logs in the database table instead of files. Logs gets automatically generated & saved into the database 
 on occurance of any error(or the severity level saved in the config file).
